@@ -57,3 +57,6 @@ See `spec/weekly_plan_generator.md` for the initial scheduling rule set.
 ## End-to-end flow
 
 See `spec/end_to_end_flow.md` for the full weekly plan → session → log → progression flow.
+## Weekly plan generator rules
+
+See `spec/weekly_plan_generator.md` for the initial scheduling rule set.
