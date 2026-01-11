@@ -1,6 +1,7 @@
 # Buildable Spec: Training Plan System
 
 This spec includes the canonical JSON schemas, progression/calibration logic, database schema, and beginner-safe templates.
+The implementation target is FastAPI + Postgres + JSONB to match the schemas cleanly.
 
 ## Schemas
 
@@ -41,6 +42,21 @@ Postgres-ready schema lives in `spec/db/schema.sql`.
 
 See `spec/templates/beginner_templates.md` for Upper, Lower, Full, and Cardio templates.
 
+## Exercise library seed JSON
+
+See `spec/exercises_seed.json` for IDs, patterns, equipment, and default progression values.
+
+## Session plan generator
+
+See `spec/session_plan_generator.md` for template selection, substitutions, and load assignment logic.
+
+## Weekly plan generator rules
+
+See `spec/weekly_plan_generator.md` for the initial scheduling rule set.
+
+## End-to-end flow
+
+See `spec/end_to_end_flow.md` for the full weekly plan → session → log → progression flow.
 ## Weekly plan generator rules
 
 See `spec/weekly_plan_generator.md` for the initial scheduling rule set.
