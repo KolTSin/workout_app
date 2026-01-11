@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/WeeklyPlan.schema.json",
+  "title": "WeeklyPlan",
+  "type": "object",
+  "required": ["id", "user_id", "week_start_date", "timezone", "days", "created_at"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "user_id": { "type": "string", "format": "uuid" },
+    "week_start_date": { "type": "string", "format": "date" },
+    "timezone": { "type": "string" },
+    "strategy": {
+      "type": "string",
+      "enum": ["ULF_2C", "FULL_3", "UL_4", "CUSTOM"]
+    },
+    "days": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["date", "label"],
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "label": {
+            "type": "string",
+            "enum": ["UPPER", "LOWER", "FULL", "CARDIO", "MOBILITY", "REST"]
+          },
+          "session_plan_id": { "type": ["string", "null"], "format": "uuid" },
+          "notes": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
